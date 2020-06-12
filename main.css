@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --navbar-height: 75px;
+  --trans: 400ms height;
+}
+body {
+  background-color: rgb(255, 235, 168);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.navbar {
+  height: var(--navbar-height);
+  background-color: #333;
+  color: #eee;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.nav-logo {
+  font-family: "Sriracha", cursive;
+  font-size: 2rem;
+  margin-left: 1rem;
+  display: grid;
+  align-content: center;
+}
+.nav-links {
+  width: 100%;
+  color: #333;
+  position: absolute;
+  top: var(--navbar-height);
+  left: 0;
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  overflow: hidden;
+  transition: var(--trans);
+}
+
+.nav-link {
+  height: 0;
+  display: grid;
+  align-content: center;
+  transition: var(--trans);
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+}
+
+.show {
+  height: 12rem;
+}
+.show .nav-link {
+  height: 3rem;
+}
+.show .nav-link:hover {
+  background-color: lightskyblue;
+}
+.nav-toggle {
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  display: grid;
+  align-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+  .navbar {
+    align-items: stretch;
+  }
+  .nav-logo {
+    display: grid;
+    align-content: center;
+  }
+  .nav-links {
+    background-color: transparent;
+    width: max-content;
+
+    position: static;
+    height: auto;
+    flex-direction: row;
+    overflow: auto;
+  }
+  .nav-link {
+    height: auto;
+    padding: 0 2rem;
+    color: #eee;
+  }
+  .nav-link:hover {
+    background-color: lightcoral;
+  }
+}
